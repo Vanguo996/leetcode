@@ -105,3 +105,16 @@ func main() {
 
 
 }
+
+// 2021.9.5 
+func twoSumNew(arr []int, target int) []int{
+	m := make(map[int]int, 0)
+	for i := 0; i < len(arr); i++ {
+		temp := target - arr[i]
+		if _, ok := m[temp]; ok {
+			return []int{m[temp], i}
+		}
+		m[arr[i]] = i
+	}
+	return nil	
+}
